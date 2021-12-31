@@ -36,7 +36,7 @@ class TestOne extends Test{
 	
 }
 
-public class AbstractClass3 {
+public class SuperConstructorTest {
 	
 	public static void main(String args[]) {
 		
