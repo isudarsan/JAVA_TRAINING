@@ -11,7 +11,7 @@ interface B extends A {
 	
 }
 
-class X implements B {
+class X implements B {
 	
 	public void printA() {
 		System.out.println("A");
