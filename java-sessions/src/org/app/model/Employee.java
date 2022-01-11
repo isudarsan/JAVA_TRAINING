@@ -1,5 +1,7 @@
 package org.app.model;
 
+import java.util.Objects;
+
 public class Employee {
 	private int id;
 	private String name;
@@ -34,5 +36,17 @@ public class Employee {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
+	}
+
+	
+
+	
+	
+	
+	
 
 }

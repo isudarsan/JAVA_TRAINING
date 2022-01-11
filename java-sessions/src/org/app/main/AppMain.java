@@ -22,6 +22,8 @@ public class AppMain {
 		Employee empolyee = employeeService.findBy(111);
 		
 		employee = employeeService.findBy("AAAA");
+		
+		System.out.println("Hello Spring");
 	}
 
 }
