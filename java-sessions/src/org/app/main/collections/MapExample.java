@@ -1,7 +1,10 @@
 package org.app.main.collections;
 
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public class MapExample {
 
@@ -59,18 +62,37 @@ public class MapExample {
 		
 		
 		// LinkedHashMap provides Insertion Order
-		Map<String,String> map = new LinkedHashMap<String,String>();
-		map.put("test","Garbage");
-		map.put("Dog", "Puppy");
-		map.put("Monkey", "Joe");
-		map.put("Key", "Value");
-		map.put("Lion", "Balayya");
-		map.put("Tiger", "NTR");
+//		Map<String,String> map = new LinkedHashMap<String,String>();
+//		map.put("test","Garbage");
+//		map.put("Dog", "Puppy");
+//		map.put("Monkey", "Joe");
+//		map.put("Key", "Value");
+//		map.put("Lion", "Balayya");
+//		map.put("Tiger", "NTR");
+////		
+////		
+//		for(String st : map.values()) {
+//			System.out.println(st);
+//		}
+		
+		
+//				
+//		SortedMap<Integer, String> sortedMap = new TreeMap<Integer, String>();
+//		
+//		sortedMap.put(34, "Cat");
+//		sortedMap.put(21, "Animal");
+//		sortedMap.put(345, "Zebra");
+//		sortedMap.put(56, "Horse");
 //		
 //		
-		for(String st : map.values()) {
-			System.out.println(st);
-		}
+//		Collection<String> collection = sortedMap.values();
+//		
+//		
+//		for(String val : collection) {
+//			System.out.println(val);
+//		}
+		
+		
 		
 	}
 	
