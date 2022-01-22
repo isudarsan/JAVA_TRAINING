@@ -1,40 +1,21 @@
 package org.app.main.collections;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
-public class CustomerMain {
+public class ArraysExample {
 
 	public static void main(String[] args) {
-		
-		
-//		List<Customer> customers = new ArrayList<Customer>();
-//		
-//		customers.add(new Customer("Africa", "Zulu", 34));
-//		customers.add(new Customer("America", "Jhon", 14));
-//		customers.add(new Customer("Pakistan", "Abdul", 54));
-//		
-//		
-//		for(Customer customer : customers) {
-//			System.out.println(customer);
-//		}
-		
 
-		
-		
-		// Bubble Sort 
+		// Bubble Sort
 		// Quick Sort, Merge Sort ... etc
-		
+
 		// Linear Search, Binaray Search
-		
-		
+
 		// Bubble Sort Implementation
-		int[] array = {45,-3,65,31,123};  // {-3,31,45,65,123}
-		
+		int[] array = { 45, -3, 65, 31, 123 }; // {-3,31,45,65,123}
+
 		// Linear Search Implementation
-		
+
 //		int searchkey = 165;
 //		boolean flag = false;
 //		
@@ -50,7 +31,7 @@ public class CustomerMain {
 //		}else {
 //			System.out.println("Element Not Found");
 //		}
-		
+
 //		
 //		
 //		for(int i = 0; i < array.length; i++) {
@@ -80,22 +61,41 @@ public class CustomerMain {
 //		for(int val : array) {
 //			System.out.println(val);
 //		}
-		
+
 //		
-		
-		
+
 		// To use Binary Search, we need to sort the array before searching
+
+//		Arrays.sort(array);
+//
+//		int x = Arrays.binarySearch(array, 65);
+//
+//		if (x < 0) {
+//			System.out.println("Element Not Found");
+//		} else {
+//			System.out.println("Element Found at location : " + x);
+//		}
+
 		
 		Arrays.sort(array);
 		
-		int x = Arrays.binarySearch(array, 65);
 		
-		if(x < 0) {
-			System.out.println("Element Not Found" );
-		}else {
-			System.out.println("Element Found at location : "+x);
+		
+		String[] strings = { "dog", "animal", "horse", "cat", "mouse" };
+
+		System.out.println("Before Sort\n\n");
+
+		for (String st : strings) {
+			System.out.println(st);
 		}
-		
+
+		Arrays.sort(strings);
+
+		System.out.println("\n\nAfter Sort\n\n");
+
+		for (String st : strings) {
+			System.out.println(st);
+		}
 
 	}
 
