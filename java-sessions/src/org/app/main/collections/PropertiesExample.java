@@ -22,8 +22,7 @@ public class PropertiesExample {
 			Iterator it = set.iterator();
 			while (it.hasNext()) {
 				System.out.println(it.next());
-			}
-			
+			}			
 			
 			
 			Collection collection = properties.values();
