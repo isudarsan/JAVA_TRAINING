@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.Properties;
 import java.util.Set;
 
-public class Test {
+public class PropertiesExample {
 
 	public static void main(String args[]) {
 
