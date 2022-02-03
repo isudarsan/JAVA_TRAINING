@@ -1,4 +1,4 @@
-package com.java.training.jdbc.example;
+package com.java.training.jdbc.example.domain;
 
 /**
  * @author sudarsanpro

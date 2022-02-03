@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.java.training.jdbc.example.domain.Employee;
+
 /**
  * @author sudarsanpro This is a DBConnection class which is used to establish
  *         DBConnection

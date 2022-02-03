@@ -8,6 +8,9 @@ public class JDBCConnectionTest {
 
 	public static void main(String[] args) {
 
+		
+		
+		
 		try {
 			// Driver Class -> com.mysql.cj.jdbc.Driver
 			Class.forName("com.mysql.cj.jdbc.Driver");
