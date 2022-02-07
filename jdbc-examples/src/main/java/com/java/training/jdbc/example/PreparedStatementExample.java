@@ -81,18 +81,18 @@ public class PreparedStatementExample {
 
 			// =========== Selection ===================
 
-			pstmt = connection.prepareStatement("SELECT * FROM employee WHERE employee_id = ?");
-			pstmt.setInt(1, 111);
-			ResultSet rs = pstmt.executeQuery();
-			
-			
-
-			while (rs.next()) {
-				System.out.println(rs.getString("employee_id") + "\t" + rs.getString("first_name") + "\t"
-						+ rs.getString("last_name") + "\t" + rs.getString("age") + "\t" + rs.getString("salary"));
-			}
-
-			rs.close();
+//			pstmt = connection.prepareStatement("SELECT * FROM employee WHERE employee_id = ?");
+//			pstmt.setInt(1, 111);
+//			ResultSet rs = pstmt.executeQuery();
+//			
+//			
+//
+//			while (rs.next()) {
+//				System.out.println(rs.getString("employee_id") + "\t" + rs.getString("first_name") + "\t"
+//						+ rs.getString("last_name") + "\t" + rs.getString("age") + "\t" + rs.getString("salary"));
+//			}
+//
+//			rs.close();
 
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
