@@ -49,8 +49,6 @@ public class ConnectionPooling {
 			statement.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
 		} finally {
 			if (null != connection) {
 				try {
