@@ -1,0 +1,110 @@
+/*create database java_training;
+
+show databases;
+
+use java_training;*/
+
+
+use java_training;
+show tables;
+create table employee (employee_id int NOT NULL, 
+first_name varchar(255), 
+last_name varchar(255), 
+age int, 
+salary double, 
+primary key (employee_id));
+
+show tables;
+
+desc employee;
+
+select * from employee;
+
+show processlist;
+
+
+insert into employee(employee_id,first_name,last_name,age,salary) values(777,"AAA","CC",25,200.00);
+
+select count(*) from employee;
+
+ALTER TABLE employee ADD employee_image BLOB
+
+DELIMITER //
+
+CREATE PROCEDURE GetAll()
+BEGIN
+	SELECT * FROM employee;
+END //
+
+DELIMITER ;
+
+CALL GetAll();
+
+
+
+
+
+
+
+DELIMITER //
+
+CREATE PROCEDURE GetByEmployeeId(IN empId int)
+
+BEGIN 
+	SELECT * FROM EMPLOYEE WHERE employee_id = empId;
+END //
+
+DELIMITER ;
+
+
+CALL GetByEmployeeId(333);
+
+
+
+
+DELIMITER //
+
+CREATE PROCEDURE GetTotalCount( IN empAge int, OUT sumOfSalary int)	
+
+BEGIN
+		SELECT SUM(salary) INTO sumOfSalary FROM employee WHERE age = empAge;
+END //
+
+DELIMITER ;
+
+
+CALL getTotalCount(25, @TOTAL_SAL_BY_AGE);
+SELECT @TOTAL_SAL_BY_AGE;
+
+
+SELECT * FROM employee;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
