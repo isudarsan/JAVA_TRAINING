@@ -81,6 +81,19 @@ SELECT * FROM employee;
 
 
 
+DELIMITER //
+
+CREATE FUNCTION GetSumOfSalary(empAge int) RETURNS int
+DETERMINISTIC
+BEGIN
+  DECLARE sumOfSalary int;
+  SELECT SUM(salary) INTO sumOfSalary FROM employee WHERE age = empAge;
+  RETURN sumOfSalary;
+END //
+DELIMITER ;
+
+
+SELECT GetSumOfSalary(25);
 
 
 
