@@ -1,0 +1,6 @@
+2022-02-14 11:10:43,735 WARN com.java.training.log4j.App [main] Hello, world this is WARN
+2022-02-14 11:10:43,736 ERROR com.java.training.log4j.App [main] Hello world, this ERROR
+2022-02-14 11:10:43,736 FATAL com.java.training.log4j.App [main] Hello world, this is FATAL
+11:12:06.500 [main] WARN  com.java.training.log4j.App -Hello, world this is WARN
+11:12:06.501 [main] ERROR com.java.training.log4j.App -Hello world, this ERROR
+11:12:06.501 [main] FATAL com.java.training.log4j.App -Hello world, this is FATAL
