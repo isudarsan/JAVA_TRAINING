@@ -31,9 +31,27 @@ public class CSVBeanMapping {
 
 			List<Oscar> list = bean.parse();
 
-			for (Oscar oscar : list) {
+			/*for (Oscar oscar : list) {
 				System.out.println(oscar);
+			}*/
+			
+			
+			
+			
+			List<List<Oscar>> oscars = BatchUtil.makeBatch(list, 5);
+			
+			
+			for(List<Oscar> oscarLists : oscars) {
+				
+				// JDBC Batch
+				
+				System.out.println("");
+				
+				
+				
 			}
+			
+			
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
