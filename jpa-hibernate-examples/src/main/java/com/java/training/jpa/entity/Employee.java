@@ -10,6 +10,7 @@ import javax.persistence.Table;
 public class Employee {
 
 	@Id
+	@Column(name = "employee_id")
 	private int employeeId;
 
 	@Column(name = "first_name")
@@ -67,5 +68,13 @@ public class Employee {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
+
+	@Override
+	public String toString() {
+		return "Employee [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName + ", age="
+				+ age + ", salary=" + salary + "]";
+	}
+	
+	
 
 }
