@@ -32,27 +32,38 @@ public class App {
 
 		// Find Employee by PK
 
-//		Employee employee = employeeService.findBy(111);
-//
-//		if (null == employee) {
-//			System.out.println("Record doesnt exists!");
-//		} else {
-//			System.out.println(employee);
-//		}
+		Employee employee = employeeService.findBy(2);
+
+		if (null == employee) {
+			System.out.println("Record doesnt exists!");
+		} else {
+			System.out.println(employee);
+		}
 
 		// Delete Employee
 		// employeeService.delete(11);
 
 		
 		// Update Employee
-		Employee employee = new Employee();
-		employee.setEmployeeId(105);
-		employee.setFirstName("XXX_Updated First Name");
-		employee.setLastName("XXX_Updated Last Name");
-		employee.setAge(6);
-		employee.setSalary(67);
-
-		employeeService.update(employee);
+//		Employee employee = new Employee();
+//		employee.setEmployeeId(105);
+//		employee.setFirstName("XXX_Updated First Name");
+//		employee.setLastName("XXX_Updated Last Name");
+//		employee.setAge(6);
+//		employee.setSalary(67);
+//
+//		employeeService.update(employee);
+		
+		
+		
+		
+		//System.out.println(employeeService.getAll());
+		
+		
+		
+		
+		
+		
 
 	}
 }

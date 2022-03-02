@@ -1,5 +1,7 @@
 package com.java.training.jpa.service;
 
+import java.util.List;
+
 import com.java.training.jpa.entity.Employee;
 
 public interface EmployeeService {
@@ -11,5 +13,7 @@ public interface EmployeeService {
 	void delete(final int employeeId);
 
 	void update(final Employee employee);
+	
+	List<Employee> getAll();
 
 }

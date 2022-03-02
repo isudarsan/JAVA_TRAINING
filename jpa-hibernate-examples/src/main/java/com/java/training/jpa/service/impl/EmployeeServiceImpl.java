@@ -1,7 +1,11 @@
 package com.java.training.jpa.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
 
 import com.java.training.jpa.entity.Employee;
 import com.java.training.jpa.service.EmployeeService;
@@ -32,12 +36,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 		EntityManagerFactory emf = JPAUtil.getEMF();
 		EntityManager em = emf.createEntityManager();
 
-		em.getTransaction().begin();
+		// Transaction is not required to find an Entity using EntityManager, hence
+		// commented.
+		// em.getTransaction().begin();
 
 		// SELECT * FROM EMPLOYEE WHERE employee_id = ?
 		Employee employee = em.find(Employee.class, employeeId);
 
-		em.getTransaction().commit();
+		// em.getTransaction().commit();
 
 		em.close();
 		JPAUtil.close();
@@ -108,6 +114,47 @@ public class EmployeeServiceImpl implements EmployeeService {
 			System.out.println("Record Updated !");
 
 		}
+
+	}
+
+	public List<Employee> getAll() {
+
+		// Transaction is not required when we are using JPA Query interface or finding
+		// any entity using EntintManager
+		// Transaction is required when we perform INSERT, UPDATE & DELETE operations.
+
+		List<Employee> employees = null;
+
+		EntityManagerFactory emf = JPAUtil.getEMF();
+		EntityManager em = emf.createEntityManager();
+
+		// employees = new ArrayList<Employee>() -> for Native Query
+		
+//		Query query = em.createNativeQuery("SELECT * FROM employee");
+//
+//		List<Object[]> lists = query.getResultList();
+//
+//		for (Object[] array : lists) {
+//
+//			Employee employee = new Employee();
+//
+//			employee.setEmployeeId((Integer) array[0]);
+//			employee.setFirstName((String) array[1]);
+//			employee.setLastName((String) array[2]);
+//			employee.setAge((Integer) array[3]);
+//			employee.setSalary((Double) array[4]);
+//
+//			employees.add(employee);
+//
+//		}
+
+		Query qury = em.createQuery("SELECT e FROM Employee e");
+		employees  = (List<Employee>) qury.getResultList();
+
+		emf.close();
+		JPAUtil.close();
+
+		return employees;
 
 	}
 
