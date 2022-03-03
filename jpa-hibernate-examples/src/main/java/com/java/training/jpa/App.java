@@ -32,13 +32,13 @@ public class App {
 
 		// Find Employee by PK
 
-		Employee employee = employeeService.findBy(2);
-
-		if (null == employee) {
-			System.out.println("Record doesnt exists!");
-		} else {
-			System.out.println(employee);
-		}
+//		Employee employee = employeeService.findBy(2);
+//
+//		if (null == employee) {
+//			System.out.println("Record doesnt exists!");
+//		} else {
+//			System.out.println(employee);
+//		}
 
 		// Delete Employee
 		// employeeService.delete(11);
@@ -57,7 +57,7 @@ public class App {
 		
 		
 		
-		//System.out.println(employeeService.getAll());
+		System.out.println(employeeService.getAll());
 		
 		
 		
