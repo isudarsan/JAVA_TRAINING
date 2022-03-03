@@ -14,6 +14,23 @@ public interface EmployeeService {
 
 	void update(final Employee employee);
 	
-	List<Employee> getAll();
+	List<Employee> getAllUsingJPQL();
+	
+	List<Employee> getAllUsingNativeQuery();
+	
+	List<Employee> getAllUsingNativeQueryWithOverloadedMethod();
 
+	Long getCountOfAllRecords();
+	
+	List<String> getFirstNameBasedOnLastName(final String lastName);
+	
+	List<String> getFirstNameBasedOnLastNameAndAge(final String lastName, final int age);
+	
+	
+	List<Employee> getAllUsingJPQLUsingNamedQuery();
+	
+	List<Employee> getAllByAge(final int age);
+	
+	List<Employee> getAllUsingNamedNativeQuery();
+	
 }

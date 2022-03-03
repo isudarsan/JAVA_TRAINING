@@ -3,10 +3,24 @@ package com.java.training.jpa.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "employee")
+@NamedQueries({
+
+		@NamedQuery(name = "Employee.getAll", query = "from Employee e"),
+		@NamedQuery(name = "Employee.findByAge", query = "from Employee e where e.age =:age")
+
+})
+
+@NamedNativeQueries({
+
+		@NamedNativeQuery(name = "Employee.namedFindAll", query = "SELECT * FROM employee", resultClass = Employee.class) })
 public class Employee {
 
 	@Id
@@ -15,13 +29,13 @@ public class Employee {
 
 	@Column(name = "first_name")
 	private String firstName;
-	
+
 	@Column(name = "last_name")
 	private String lastName;
-	
+
 	@Column(name = "age")
 	private int age;
-	
+
 	@Column(name = "salary")
 	private double salary;
 
@@ -74,7 +88,5 @@ public class Employee {
 		return "Employee [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName + ", age="
 				+ age + ", salary=" + salary + "]";
 	}
-	
-	
 
 }

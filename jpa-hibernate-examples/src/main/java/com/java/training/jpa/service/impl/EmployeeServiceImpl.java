@@ -117,45 +117,173 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	}
 
-	public List<Employee> getAll() {
+	public List<Employee> getAllUsingJPQL() {
 
 		// Transaction is not required when we are using JPA Query interface or finding
 		// any entity using EntintManager
 		// Transaction is required when we perform INSERT, UPDATE & DELETE operations.
 
-		List<Employee> employees = null;
-
 		EntityManagerFactory emf = JPAUtil.getEMF();
 		EntityManager em = emf.createEntityManager();
 
-		// employees = new ArrayList<Employee>() -> for Native Query
-		
-//		Query query = em.createNativeQuery("SELECT * FROM employee");
-//
-//		List<Object[]> lists = query.getResultList();
-//
-//		for (Object[] array : lists) {
-//
-//			Employee employee = new Employee();
-//
-//			employee.setEmployeeId((Integer) array[0]);
-//			employee.setFirstName((String) array[1]);
-//			employee.setLastName((String) array[2]);
-//			employee.setAge((Integer) array[3]);
-//			employee.setSalary((Double) array[4]);
-//
-//			employees.add(employee);
-//
-//		}
-
-		Query qury = em.createQuery("SELECT e FROM Employee e");
-		employees  = (List<Employee>) qury.getResultList();
+		// Query qury = em.createQuery("SELECT e FROM Employee e");
+		Query qury = em.createQuery("from Employee e");
+		List<Employee> employees = (List<Employee>) qury.getResultList();
 
 		emf.close();
 		JPAUtil.close();
 
 		return employees;
 
+	}
+
+	public List<Employee> getAllUsingNativeQuery() {
+
+		List<Employee> employees = new ArrayList<Employee>();
+
+		EntityManagerFactory emf = JPAUtil.getEMF();
+		EntityManager em = emf.createEntityManager();
+
+		Query query = em.createNativeQuery("SELECT * FROM employee");
+
+		List<Object[]> lists = query.getResultList();
+
+		for (Object[] array : lists) {
+
+			Employee employee = new Employee();
+
+			// If we dont cast the index of array, we will get class cast exception.
+			employee.setEmployeeId((Integer) array[0]);
+			employee.setFirstName((String) array[1]);
+			employee.setLastName((String) array[2]);
+			employee.setAge((Integer) array[3]);
+			employee.setSalary((Double) array[4]);
+
+			employees.add(employee);
+
+		}
+
+		emf.close();
+		JPAUtil.close();
+
+		return employees;
+	}
+
+	public List<Employee> getAllUsingNativeQueryWithOverloadedMethod() {
+
+		EntityManagerFactory emf = JPAUtil.getEMF();
+		EntityManager em = emf.createEntityManager();
+
+		// Result Class must be an Entity, else JPA throws Unknown entity exception
+		Query query = em.createNativeQuery("SELECT * FROM employee", Employee.class);
+
+		List<Employee> employees = (List<Employee>) query.getResultList();
+
+		emf.close();
+		JPAUtil.close();
+
+		return employees;
+	}
+
+	public Long getCountOfAllRecords() {
+
+		EntityManagerFactory emf = JPAUtil.getEMF();
+		EntityManager em = emf.createEntityManager();
+
+		// select count(*) from employee
+
+		Query query = em.createQuery("SELECT COUNT(e) FROM Employee e");
+		Long totalCount = (Long) query.getSingleResult();
+
+		emf.close();
+		JPAUtil.close();
+
+		return totalCount;
+
+	}
+
+	public List<String> getFirstNameBasedOnLastName(String lastName) {
+
+		EntityManagerFactory emf = JPAUtil.getEMF();
+		EntityManager em = emf.createEntityManager();
+
+		// select first_name from employee where last_name = ?
+
+		Query query = em.createQuery("SELECT e.firstName FROM Employee e WHERE e.lastName =: last");
+		query.setParameter("last", lastName);
+
+		List<String> firstNameList = query.getResultList();
+
+		emf.close();
+		JPAUtil.close();
+
+		return firstNameList;
+
+	}
+
+	public List<String> getFirstNameBasedOnLastNameAndAge(String lastName, int age) {
+
+		EntityManagerFactory emf = JPAUtil.getEMF();
+		EntityManager em = emf.createEntityManager();
+
+		// select first_name from employee where last_name = ? and age = ?
+
+		Query query = em
+				.createQuery("SELECT e.firstName FROM Employee e WHERE e.lastName =: lastName AND e.age =: age");
+		query.setParameter("lastName", lastName);
+		query.setParameter("age", age);
+		List<String> firstNameList = query.getResultList();
+
+		emf.close();
+		JPAUtil.close();
+
+		return firstNameList;
+	}
+
+	public List<Employee> getAllUsingJPQLUsingNamedQuery() {
+		EntityManagerFactory emf = JPAUtil.getEMF();
+		EntityManager em = emf.createEntityManager();
+
+		// Query qury = em.createQuery("SELECT e FROM Employee e");
+		Query qury = em.createNamedQuery("Employee.getAll");
+		List<Employee> employees = (List<Employee>) qury.getResultList();
+
+		emf.close();
+		JPAUtil.close();
+
+		return employees;
+
+	}
+
+	public List<Employee> getAllByAge(int age) {
+		EntityManagerFactory emf = JPAUtil.getEMF();
+		EntityManager em = emf.createEntityManager();
+
+		// Query qury = em.createQuery("SELECT e FROM Employee e");
+		Query query = em.createNamedQuery("Employee.findByAge");
+		query.setParameter("age", age);
+		List<Employee> employees = (List<Employee>) query.getResultList();
+
+		emf.close();
+		JPAUtil.close();
+
+		return employees;
+	}
+
+	public List<Employee> getAllUsingNamedNativeQuery() {
+		EntityManagerFactory emf = JPAUtil.getEMF();
+		EntityManager em = emf.createEntityManager();
+
+		// Result Class must be specified in entity itself when using named query.
+//		Query query = em.createNativeQuery("SELECT * FROM employee", Employee.class);
+		Query query = em.createNamedQuery("Employee.namedFindAll");
+
+		List<Employee> employees = (List<Employee>) query.getResultList();
+
+		emf.close();
+		JPAUtil.close();
+
+		return employees;
 	}
 
 }

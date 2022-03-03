@@ -43,7 +43,6 @@ public class App {
 		// Delete Employee
 		// employeeService.delete(11);
 
-		
 		// Update Employee
 //		Employee employee = new Employee();
 //		employee.setEmployeeId(105);
@@ -53,17 +52,18 @@ public class App {
 //		employee.setSalary(67);
 //
 //		employeeService.update(employee);
+
+		// System.out.println(employeeService.getAllUsingJPQL());
+
+		// System.out.println(employeeService.getCountOfAllRecords());
+
+		// System.out.println(employeeService.getFirstNameBasedOnLastNameAndAge("CC",35));
+
+		// System.out.println(employeeService.getAllUsingJPQLUsingNamedQuery());
+
+		//System.out.println(employeeService.getAllByAge(25));
 		
-		
-		
-		
-		System.out.println(employeeService.getAll());
-		
-		
-		
-		
-		
-		
+		System.out.println(employeeService.getAllUsingNamedNativeQuery());
 
 	}
 }
