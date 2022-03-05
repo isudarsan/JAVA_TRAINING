@@ -3,7 +3,7 @@ package com.java.training.jpa;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
-import com.java.training.jpa.entity.Employee;
+import com.java.training.jpa.entity.Test;
 import com.java.training.jpa.service.EmployeeService;
 import com.java.training.jpa.service.impl.EmployeeServiceImpl;
 import com.java.training.jpa.util.JPAUtil;
@@ -16,6 +16,7 @@ public class App {
 	public static void main(String[] args) {
 
 		EmployeeService employeeService = new EmployeeServiceImpl();
+		
 
 		// Create Employee
 
@@ -63,7 +64,36 @@ public class App {
 
 		//System.out.println(employeeService.getAllByAge(25));
 		
-		System.out.println(employeeService.getAllUsingNamedNativeQuery());
-
+		//System.out.println(employeeService.getAllUsingNamedNativeQuery());
+		
+		
+		
+		// For hbm2ddl demo purpose.
+		
+//		Test test = new Test();
+//		test.setEmployeeId(1);
+//		test.setFirstName("JPA FirstName2");
+//		test.setLastName("JPA Last Name2");
+//		test.setAge(61);
+//		test.setSalary(110.67);
+//		
+//		
+//		EntityManagerFactory emf = JPAUtil.getEMF();
+//		EntityManager em = emf.createEntityManager();
+//
+//		em.getTransaction().begin();
+//
+//		// Used to insert the data into the database.
+//		// INSERT INTO query
+//		em.persist(test);
+//
+//		em.getTransaction().commit();
+//
+//		em.close();
+//
+//		JPAUtil.close();
+		
+		
+		
 	}
 }
