@@ -4,7 +4,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -27,9 +26,8 @@ public class User {
 
 	@Column(name = "last_name")
 	private String lastName;
-
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "user_details_id")
+	
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "user")	
 	private UserDetails userDetails;
 
 	public User() {
@@ -82,5 +80,7 @@ public class User {
 	public void setUserDetails(UserDetails userDetails) {
 		this.userDetails = userDetails;
 	}
+
+	
 
 }
