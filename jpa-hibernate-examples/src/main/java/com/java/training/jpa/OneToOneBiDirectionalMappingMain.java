@@ -30,8 +30,13 @@ public class OneToOneBiDirectionalMappingMain {
 		userDetails.setCity("VIZAG");
 		userDetails.setCountry("India");
 		userDetails.setMobile("765");
+		
+		userDetails.setUser(user);
+		
 
 		user.setUserDetails(userDetails);
+		
+		
 
 		EntityManagerFactory emf = JPAUtil.getEMF();
 		EntityManager em = emf.createEntityManager();

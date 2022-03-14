@@ -12,15 +12,24 @@
 
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-		<class>com.java.training.jpa.entity.Employee</class>
+		<!-- <class>com.java.training.jpa.entity.Employee</class>
 		<class>com.java.training.jpa.entity.Test</class>
-		<class>com.java.training.jpa.entity.Sample</class>
+		<class>com.java.training.jpa.entity.Sample</class> -->
 
 		<!-- <class>com.java.training.jpa.entity.UserUni</class> <class>com.java.training.jpa.entity.UserDetailsUni</class> -->
 
 		<!-- For Bi Directional Mapping -->
-		<class>com.java.training.jpa.entity.User</class>
-		<class>com.java.training.jpa.entity.UserDetails</class>
+		<!-- <class>com.java.training.jpa.entity.User</class>
+		<class>com.java.training.jpa.entity.UserDetails</class> -->
+		
+		
+		<!-- <class>com.java.training.jpa.entity.XUser</class>
+		<class>com.java.training.jpa.entity.XUserLogin</class> -->
+		
+		
+		<class>com.java.training.jpa.entity.AppUser</class>
+		<class>com.java.training.jpa.entity.AppUserLogin</class>
+		
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.cj.jdbc.Driver" />
