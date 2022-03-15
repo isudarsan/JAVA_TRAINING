@@ -27,8 +27,15 @@
 		<class>com.java.training.jpa.entity.XUserLogin</class> -->
 		
 		
-		<class>com.java.training.jpa.entity.AppUser</class>
-		<class>com.java.training.jpa.entity.AppUserLogin</class>
+		<!-- <class>com.java.training.jpa.entity.AppUser</class>
+		<class>com.java.training.jpa.entity.AppUserLogin</class> -->
+		
+		<!-- <class>com.java.training.jpa.entity.Student</class>
+		<class>com.java.training.jpa.entity.Department</class> -->
+		
+		
+		<class>com.java.training.jpa.entity.Customer</class>
+		<class>com.java.training.jpa.entity.Branch</class>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
