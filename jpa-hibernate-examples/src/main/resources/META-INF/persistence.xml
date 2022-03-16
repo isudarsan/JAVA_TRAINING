@@ -34,8 +34,11 @@
 		<class>com.java.training.jpa.entity.Department</class> -->
 		
 		
-		<class>com.java.training.jpa.entity.Customer</class>
-		<class>com.java.training.jpa.entity.Branch</class>
+		<!-- <class>com.java.training.jpa.entity.Customer</class>
+		<class>com.java.training.jpa.entity.Branch</class> -->
+		
+		<class>com.java.training.jpa.entity.Movie</class>
+		<class>com.java.training.jpa.entity.Actor</class>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
