@@ -16,17 +16,30 @@ public class OneToManyUniDirectionalStudent {
 
 		// createStudentsInDepartment();
 
-		//System.out.println(getStudentsByDepartmenetId(10));
+		List<Student> students = getStudentsByDepartmenetId(10);
+
+		for (Student student : students) {
+			System.out.println(student.getFirstName() + " " + student.getLastName());
+		}
 
 	}
 
+	// TODO Explain fetch Join to resolve LAZY exception
+
+	// To solve Lazy initilization issue, we can use FetchType as EGER, however it
+	// leads to performance issues.
+
+	// When we use EGER fetch type, all the associated entities will be loaded as
+	// part of initilization into the parent entity.however this is not desirable
+	// when we are dealing with large amount of data.
 	
-	//TODO Fix this as part of LAZY, EGER explanation
 	private static List<Student> getStudentsByDepartmenetId(int departmentId) {
 		EntityManagerFactory emf = JPAUtil.getEMF();
 		EntityManager em = emf.createEntityManager();
 
 		Department department = em.find(Department.class, departmentId);
+
+		System.out.println(department.getId() + " " + department.getDepartmentName());
 
 		List<Student> students = null;
 		if (null != department) {
