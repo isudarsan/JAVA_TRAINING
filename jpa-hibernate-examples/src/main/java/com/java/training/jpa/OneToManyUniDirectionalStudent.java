@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
 
 import com.java.training.jpa.entity.Department;
 import com.java.training.jpa.entity.Student;
@@ -32,7 +33,7 @@ public class OneToManyUniDirectionalStudent {
 	// When we use EGER fetch type, all the associated entities will be loaded as
 	// part of initilization into the parent entity.however this is not desirable
 	// when we are dealing with large amount of data.
-	
+
 	private static List<Student> getStudentsByDepartmenetId(int departmentId) {
 		EntityManagerFactory emf = JPAUtil.getEMF();
 		EntityManager em = emf.createEntityManager();
