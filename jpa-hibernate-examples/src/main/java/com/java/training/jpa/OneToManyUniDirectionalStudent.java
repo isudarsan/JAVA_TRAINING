@@ -17,10 +17,63 @@ public class OneToManyUniDirectionalStudent {
 
 		// createStudentsInDepartment();
 
-		List<Student> students = getStudentsByDepartmenetId(10);
+//		List<Student> students = getStudentsByDepartmenetId(10);
+//
+//		for (Student student : students) {
+//			System.out.println(student.getFirstName() + " " + student.getLastName());
+//		}
+		
+		
+		
+		//crateNPlusOneProblem();
+		
+		nplusOneProblemSolution();
+		
 
-		for (Student student : students) {
-			System.out.println(student.getFirstName() + " " + student.getLastName());
+	}
+	
+	
+	static void nplusOneProblemSolution() {
+		
+		EntityManagerFactory emf = JPAUtil.getEMF();
+		EntityManager em = emf.createEntityManager();
+
+		Query query = em.createQuery("from Department dept join fetch dept.students s");
+		List<Department> depts = query.getResultList();
+
+		em.close();
+
+		JPAUtil.close();
+
+		for (Department department : depts) {
+			System.out.println("Department Name : " + department.getDepartmentName());
+			
+			
+			System.out.println(department.getStudents().size());
+			
+			
+		}
+		
+	}
+
+	static void crateNPlusOneProblem() {
+		EntityManagerFactory emf = JPAUtil.getEMF();
+		EntityManager em = emf.createEntityManager();
+
+		Query query = em.createQuery("from Department dept");
+		List<Department> depts = query.getResultList();
+
+		em.close();
+
+		JPAUtil.close();
+
+		for (Department department : depts) {
+			System.out.println("Department Name : " + department.getDepartmentName());
+			
+			
+			System.out.println(department.getStudents().size());
+			
+			
 		}
 
 	}

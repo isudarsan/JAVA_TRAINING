@@ -36,6 +36,12 @@
 
 		<class>com.java.training.jpa.entity.Cinema</class>
 		<class>com.java.training.jpa.entity.Artist</class>
+		
+		
+		<class>com.java.training.jpa.entity.Parent</class>
+		<class>com.java.training.jpa.entity.Child</class>
+		
+		<class>com.java.training.jpa.entity.Person</class>
 
 
 

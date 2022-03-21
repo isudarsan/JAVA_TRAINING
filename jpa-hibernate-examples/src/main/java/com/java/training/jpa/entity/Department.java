@@ -22,7 +22,7 @@ public class Department {
 	@Column(name = "dept_name")
 	private String departmentName;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "dept_id")
 	private List<Student> students;
 
