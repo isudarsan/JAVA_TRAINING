@@ -42,6 +42,13 @@
 		<class>com.java.training.jpa.entity.Child</class>
 		
 		<class>com.java.training.jpa.entity.Person</class>
+		
+			<class>com.java.training.jpa.entity.EmployeeComposite</class>
+			
+			
+			<class>com.java.training.jpa.entity.EmployeeParent</class>
+			<class>com.java.training.jpa.entity.FullTimeEmployee</class>
+			<class>com.java.training.jpa.entity.PartTimeEmployee</class>
 
 
 
