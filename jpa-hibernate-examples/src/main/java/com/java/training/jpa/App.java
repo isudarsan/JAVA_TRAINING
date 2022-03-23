@@ -3,6 +3,7 @@ package com.java.training.jpa;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
+import com.java.training.jpa.entity.Employee;
 import com.java.training.jpa.entity.Test;
 import com.java.training.jpa.service.EmployeeService;
 import com.java.training.jpa.service.impl.EmployeeServiceImpl;
@@ -16,7 +17,13 @@ public class App {
 	public static void main(String[] args) {
 
 		EmployeeService employeeService = new EmployeeServiceImpl();
-		
+
+		for (int i = 1; i <= 100; i++) {
+
+			Employee employee = new Employee(i+1, "First Name " + i, "Last name " + i, 8 + i, 1000 + i);
+
+			employeeService.create(employee);
+		}
 
 		// Create Employee
 
@@ -62,14 +69,12 @@ public class App {
 
 		// System.out.println(employeeService.getAllUsingJPQLUsingNamedQuery());
 
-		//System.out.println(employeeService.getAllByAge(25));
-		
-		//System.out.println(employeeService.getAllUsingNamedNativeQuery());
-		
-		
-		
+		// System.out.println(employeeService.getAllByAge(25));
+
+		// System.out.println(employeeService.getAllUsingNamedNativeQuery());
+
 		// For hbm2ddl demo purpose.
-		
+
 //		Test test = new Test();
 //		test.setEmployeeId(1);
 //		test.setFirstName("JPA FirstName2");
@@ -92,8 +97,6 @@ public class App {
 //		em.close();
 //
 //		JPAUtil.close();
-		
-		
-		
+
 	}
 }

@@ -25,9 +25,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 		em.getTransaction().commit();
 
-		em.close();
+		//em.close();
 
-		JPAUtil.close();
+		//JPAUtil.close();
 
 	}
 

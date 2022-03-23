@@ -43,6 +43,14 @@ public class Employee {
 	public Employee() {
 	}
 
+	public Employee(int employeeId, String firstName, String lastName, int age, double salary) {
+		this.employeeId = employeeId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.salary = salary;
+	}
+
 	public int getEmployeeId() {
 		return employeeId;
 	}
