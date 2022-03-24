@@ -51,6 +51,11 @@ public class Employee {
 		this.salary = salary;
 	}
 
+	public Employee(String firstName, double salary) {
+		this.firstName = firstName;
+		this.salary = salary;
+	}
+
 	public int getEmployeeId() {
 		return employeeId;
 	}
